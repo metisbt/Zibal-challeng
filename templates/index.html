@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fa">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <title>CS50x Tehran چالش دوره</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    </head>
+    <body>
+        <div class="container header_content_main">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom top_header_main">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <img src="zibal-logo.svg" alt="logo" width="100">
+                </a>
+                <h3>CS50x Tehran محتوای چالش دوره</h3>
+            </header>
+        </div>
+
+        <div class="container mt-5">
+            <div class="row main_content">
+                <div class="col-md-2 side_items">
+                    <ul class="nav flex-column nav-pills items_tab">
+                        <li class="nav-item">
+                            <a
+                                class="nav-link active"
+                                id="tab0-tab"
+                                data-toggle="pill"
+                                href="#tab0"
+                                >خانه</a
+                            >
+                        </li>
+                        <li class="nav-item">
+                        <a
+                            class="nav-link"
+                            id="tab1-tab"
+                            data-toggle="pill"
+                            href="#tab1"
+                            >استعلام</a
+                        >
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" id="tab2-tab" data-toggle="pill" href="#tab2"
+                            >تبدیل</a
+                        >
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="tab3-tab" data-toggle="pill" href="#tab3"
+                            >تطابق</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-10 right_contect">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="tab0">
+                            <h5> به سامانه استعلام، انطباق و تبدیل زیبال خوش آمدید</h5><br>
+                            <P>برای استفاده از هر کدام از خدمات نام برده تب مورد نظر خود را انتخاب کرده و از زیر تب موردنظر موارد خود را پیگیری کنید</P>
+                        </div>
+                        <div class="tab-pane fade" id="tab1">
+                            <ul class="nav nav-tabs items_for_tabs" id="subTabs" role="tablist">
+                                <li class="nav-item">
+                                    <a
+                                    class="nav-link active"
+                                    id="subtab1-tab"
+                                    data-toggle="tab"
+                                    href="#subtab1"
+                                    >استعلام شماره شبا</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                    class="nav-link"
+                                    id="subtab2-tab"
+                                    data-toggle="tab"
+                                    href="#subtab2"
+                                    >استعلام اطلاعات هویتی</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                    class="nav-link"
+                                    id="subtab3-tab"
+                                    data-toggle="tab"
+                                    href="#subtab3"
+                                    >استعلام نام صاحب کارت</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                    class="nav-link"
+                                    id="subtab4-tab"
+                                    data-toggle="tab"
+                                    href="#subtab4"
+                                    >استعلام کد پستی</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                    class="nav-link"
+                                    id="subtab5-tab"
+                                    data-toggle="tab"
+                                    href="#subtab5"
+                                    >استعلام اطلاعات شرکت</a
+                                    >
+                                </li>
+                            </ul>
+                            <div class="tab-content mt-2" id="subTabsContent">
+                                <div class="tab-pane fade show active form_box_m" id="subtab1">
+                                    <div id="myForm" class="tabcontent">
+                                        <form action="/submit" method="post">
+                                            <input type="hidden" name="form_number" value="1">
+                                            <label for="iban">شماره شبا</label>
+                                            <input type="text" id="iban" name="iban" required><br>
+                                            <button type="submit" class="btn btn-primary btn-block send_b">استعلام شماره شبا</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade form_box_m" id="subtab2">
+                                    <div id="myForm" class="tabcontent">
+                                        <form action="/submit" method="post">
+                                            <input type="hidden" name="form_number" value="2">
+                                            <label for="nationalcode">کد ملی</label>
+                                            <input type="text" id="nationalcode" name="nationalcode" required><br>
+                                            <label for="d">تاریخ تولد</label>
+                                            <input type="text" id="d" name="birthdate" required><br>
+                                            <button type="submit" class="btn btn-primary btn-block send_b">استعلام اطلاعات هویتی</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade form_box_m" id="subtab3">
+                                    <div id="myForm" class="tabcontent">
+                                        <form action="/submit" method="post">
+                                            <input type="hidden" name="form_number" value="3">
+                                            <label for="cardnumber">شماره کارت</label>
+                                            <input type="text" id="cardnumber" name="cardnumber" required><br>
+                                            <button type="submit" class="btn btn-primary btn-block send_b">استعلام نام صاحب کارت</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade form_box_m" id="subtab4">
+                                    <div id="myForm" class="tabcontent">
+                                        <form action="/submit" method="post">
+                                            <input type="hidden" name="form_number" value="4">
+                                            <label for="postalcode">کد پستی</label>
+                                            <input type="text" id="postalcode" name="postalcode" required><br>
+                                            <button type="submit" class="btn btn-primary btn-block send_b">استعلام کد پستی</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade form_box_m" id="subtab5">
+                                    <div id="myForm" class="tabcontent">
+                                        <form action="/submit" method="post">
+                                            <input type="hidden" name="form_number" value="5">
+                                            <label for="postalcode">کد اطلاعات شرکت</label>
+                                            <input type="text" id="postalcode" name="nationalid" required><br>
+                                            <button type="submit" class="btn btn-primary btn-block send_b">استعلام اطلاعات شرکت</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab2">
+                            <ul class="nav nav-tabs items_for_tabs" id="subTabs" role="tablist">
+                                <li class="nav-item">
+                                    <a
+                                    class="nav-link active"
+                                    id="subtab6-tab"
+                                    data-toggle="tab"
+                                    href="#subtab6"
+                                    >تبدیل شماره کارت به شبا</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                    class="nav-link"
+                                    id="subtab7-tab"
+                                    data-toggle="tab"
+                                    href="#subtab7"
+                                    >تبدیل شماره کارت به شماره حساب</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                    class="nav-link"
+                                    id="subtab14-tab"
+                                    data-toggle="tab"
+                                    href="#subtab14"
+                                    >تبدیل نام فارسی به انگلیسی</a
+                                    >
+                                </li>
+                            </ul>
+                            <div class="tab-content mt-2" id="subTabsContent">
+                                <div class="tab-pane fade show active form_box_m" id="subtab6">
+                                        <div id="myForm" class="tabcontent">
+                                            <form action="/submit" method="post">
+                                                <input type="hidden" name="form_number" value="6">
+                                                <label for="cardnumber">شماره کارت</label>
+                                                <input type="text" id="cardnumber" name="cardnumber" required><br>
+                                                <button type="submit" class="btn btn-primary btn-block send_b">تبدیل شماره کارت به شبا</button>
+                                            </form>
+                                        </div>
+                                </div>
+                                <div class="tab-pane fade form_box_m" id="subtab7">
+                                <div id="myForm" class="tabcontent">
+                                    <form action="/submit" method="post">
+                                        <input type="hidden" name="form_number" value="7">
+                                        <label for="cardnumber">شماره کارت</label>
+                                        <input type="text" id="cardnumber" name="cardnumber" required><br>
+                                        <button type="submit" class="btn btn-primary btn-block send_b">تبدیل شماره کارت به شماره حساب</button>
+                                    </form>
+                                </div>
+                                </div>
+                                <div class="tab-pane fade form_box_m" id="subtab14">
+                                    <div id="myForm" class="tabcontent">
+                                        <form action="/submit" method="post">
+                                            <input type="hidden" name="form_number" value="14">
+                                            <label for="persiantext">نام فارسی</label>
+                                            <input type="text" id="persiantext" name="persiantext" required><br>
+                                            <button type="submit" class="btn btn-primary btn-block send_b">تبدیل نام فارسی به انگلیسی</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="tab3">
+                            <ul class="nav nav-tabs items_for_tabs" id="subTabs" role="tablist">
+                                <li class="nav-item">
+                                    <a
+                                    class="nav-link active"
+                                    id="subtab8-tab"
+                                    data-toggle="tab"
+                                    href="#subtab8"
+                                    >تطابق کد ملی و شماره موبایل</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                    class="nav-link"
+                                    id="subtab9-tab"
+                                    data-toggle="tab"
+                                    href="#subtab9"
+                                    >تطابق شماره شبا و نام صاحب شبا</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                    class="nav-link"
+                                    id="subtab10-tab"
+                                    data-toggle="tab"
+                                    href="#subtab10"
+                                    >تطابق شماره کارت و نام صاحب کارت</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                    class="nav-link"
+                                    id="subtab11-tab"
+                                    data-toggle="tab"
+                                    href="#subtab11"
+                                    >تطابق کد ملی و شماره کارت</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a
+                                    class="nav-link"
+                                    id="subtab12-tab"
+                                    data-toggle="tab"
+                                    href="#subtab12"
+                                    >تطابق کد ملی و شماره شبا</a
+                                    >
+                                </li>
+                            </ul>
+                            <div class="tab-content mt-2" id="subTabsContent">
+                                <div class="tab-pane fade show active form_box_m" id="subtab8">
+                                        <div id="myForm" class="tabcontent">
+                                            <form action="/submit" method="post">
+                                                <input type="hidden" name="form_number" value="8">
+                                                <label for="mobile">شماره موبایل</label>
+                                                <input type="text" id="mobile" name="mobile" required><br>
+                                                <label for="nationalcode">کد ملی</label>
+                                                <input type="text" id="nationalcode" name="nationalcode" required><br>
+                                                <button type="submit" class="btn btn-primary btn-block send_b">تطابق کد ملی و شماره موبایل</button>
+                                            </form>
+                                        </div>
+                                </div>
+                                <div class="tab-pane fade form_box_m" id="subtab9">
+                                <div id="myForm" class="tabcontent">
+                                    <form action="/submit" method="post">
+                                        <input type="hidden" name="form_number" value="9">
+                                        <label for="iban">شماره شبا</label>
+                                        <input type="text" id="iban" name="iban" required><br>
+                                        <label for="name">نام و نام خانوادگی</label>
+                                        <input type="text" id="name" name="name" required><br>
+                                        <button type="submit" class="btn btn-primary btn-block send_b">تطابق شماره شبا و نام صاحب شبا</button>
+                                    </form>
+                                </div>
+                                </div>
+                                <div class="tab-pane fade form_box_m" id="subtab10">
+                                    <div id="myForm" class="tabcontent">
+                                        <form action="/submit" method="post">
+                                            <input type="hidden" name="form_number" value="10">
+                                            <label for="cardnumber">شماره کارت</label>
+                                            <input type="text" id="cardnumber" name="cardnumber" required><br>
+                                            <label for="name">نام و نام خانوادگی</label>
+                                            <input type="text" id="name" name="name" required><br>
+                                            <button type="submit" class="btn btn-primary btn-block send_b">تطابق شماره کارت و نام صاحب کارت</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade form_box_m" id="subtab11">
+                                    <div id="myForm" class="tabcontent">
+                                        <form action="/submit" method="post">
+                                            <input type="hidden" name="form_number" value="11">
+                                            <label for="nationalcode">کد ملی</label>
+                                            <input type="text" id="nationalcode" name="nationalcode" required><br>
+                                            <label for="birthdate">تاریخ تولد</label>
+                                            <input type="text" id="birthdate" name="birthdate"><br>
+                                            <label for="cardnumber">شماره کارت</label>
+                                            <input type="text" id="cardnumber" name="cardnumber" required><br>
+                                            <button type="submit" class="btn btn-primary btn-block send_b">تطابق کد ملی و شماره کارت</button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade form_box_m" id="subtab12">
+                                    <div id="myForm" class="tabcontent">
+                                        <form action="/submit" method="post">
+                                            <input type="hidden" name="form_number" value="12">
+                                            <label for="nationalcode">کد ملی</label>
+                                            <input type="text" id="nationalcode" name="nationalcode" required><br>
+                                            <label for="birthdate">تاریخ تولد</label>
+                                            <input type="text" id="birthdate" name="birthdate" required><br>
+                                            <label for="iban">شماره شبا</label>
+                                            <input type="text" id="iban" name="iban" required><br>
+                                            <button type="submit" class="btn btn-primary btn-block send_b">تطابق کد ملی و شماره شبا</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+    </body>
+</html>
