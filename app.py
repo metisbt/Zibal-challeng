@@ -4,7 +4,7 @@
 #### it is sent to the "fail" or "result" page.
 
 
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 from function import *
 
 
