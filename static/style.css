@@ -180,6 +180,12 @@ label {
     display: grid !important;
 }
 
+.table>thead {
+    vertical-align: bottom;
+    display: table;
+    text-align: center;
+}
+
 /* fail page */
 .fail-box {
     background-color: #d9534f;

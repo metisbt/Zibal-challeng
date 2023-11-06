@@ -188,7 +188,7 @@ def company_inquiry(data):
     else:
         datas = result.json()
         if datas["result"] == 1:
-            return {'l': datas}
+            return datas
         else:
             return f"خطا: {datas['message']}"
 

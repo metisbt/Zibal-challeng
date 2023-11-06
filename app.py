@@ -88,16 +88,9 @@ def submit():
         if check_cnum(n5):
             nationalid = {"nationalId": n5}
             answer5 = company_inquiry(nationalid)
-            m = {}
-            for i in answer5:
-                if i != 'companyRelatedPeople':
-                    x = answer5[i]['data']
-                    m[i] = x
-                else:
-                    for item in len(answer5['a']['data']['companyRelatedPeople']):
-                        m[item] = answer5['a']['data']['companyRelatedPeople'][item]
-            if len(m) != 0:
-                return render_template('result.html', company_inquiry_asnwer = m)
+            v = answer5['data']
+            if type(v) is dict:
+                return render_template('result.html', company_inquiry_asnwer = v)
             else:
                 return render_template('fail.html', company_inquiry_asnwer = answer5)
         else:

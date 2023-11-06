@@ -68,7 +68,29 @@
                   </table>
                   {% endblock %}
                 {% elif company_inquiry_asnwer %}
-                  <h5 class="text-re">{{ company_inquiry_asnwer }}</h5>
+                  {% block body1 %}
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>شناسه ملی شرکت</th>
+                        <th>نام شرکت</th>
+                        <th>شناسه ثبت شرکت</th>
+                        <th>تاریخ ثبت</th>
+                        <th>آدرس</th>
+                        <th>کد‌پستی</th>
+                        <th>نوع شرکت</th>
+                        <th>وضعیت شرکت</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for i in company_inquiry_asnwer %}
+                        <th>
+                          <td>{{ company_inquiry_asnwer[i] }}</td>
+                        </th>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                  {% endblock %}
                 {% elif card_to_iban_asnwer %}
                   <h5 class="text-re">{{ card_to_iban_asnwer }}</h5>
                 {% elif card_to_account_asnwer %}
