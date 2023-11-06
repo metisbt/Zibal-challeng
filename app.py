@@ -1,13 +1,21 @@
+# When a button is clicked in any form, the data related to that form is received,
+## and the form data is converted to the required format for the API. 
+### It is then sent to the specific function for each task, and after receiving the relevant information from the API, 
+#### it is sent to the "fail" or "result" page.
+
+
 from flask import Flask, render_template, request, jsonify
 from function import *
 
 
 app = Flask(__name__)
 
+# connect to main page
 @app.route('/')
 def index():
     return render_template('index.html')
 
+# with click submit button, get forms data that value number is checked
 @app.route('/submit', methods=['POST'])
 def submit():
     form_number = request.form.get('form_number')
