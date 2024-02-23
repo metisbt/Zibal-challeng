@@ -119,7 +119,7 @@ def submit():
             cardnumber = {"cardNumber": n7}
             answer7 = card_to_iban(cardnumber)
             if type(answer7) is dict:
-                return render_template('result.html', card_to_account_asnwer = f'این شماره کارت به نام "{answer7['''name''']}" میباشد.')
+                return render_template('result.html', card_to_account_asnwer = f'این شماره کارت به نام "{answer7['''name''']}" و شماره حساب "{answer7['''bankname''']}" میباشد.')
             else:
                 return render_template('fail.html', card_to_account_asnwer = answer7)
         else:
